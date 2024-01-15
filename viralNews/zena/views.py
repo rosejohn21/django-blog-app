@@ -23,7 +23,7 @@ def newDetail(request,title):
         context = {
             'new': new
         }
-
         return HttpResponse(template.render(context, request))
-    except: New.DoesNotExist:
+        
+    except New.DoesNotExist:
         raise Http404("New does not exist")
