@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-5rq=-f)t6v*+bjqmfr^5yj(_nlsiddx^o++3%17a+f+w1lal66
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['zinabu.pythonanywhere.com']
 
 
 # Application definition
@@ -127,11 +127,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/' 
 
-# STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn")
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn")
 
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR,  'static'),
-# ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,  'static'),
+]
 
 
 # Default primary key field type
