@@ -16,11 +16,14 @@ def news(request):
     return HttpResponse(template.render(context, request))
 
 def newDetail(request,title):
-    the_title = title.replace("-"," ")
-    new = New.objects.get(title=title)
-    template = loader.get_template('newdetail.html')
-    context = {
-        'new': new
-    }
+    try:   
+        the_title = title.replace("-"," ")
+        new = New.objects.get(title=title)
+        template = loader.get_template('newdetail.html')
+        context = {
+            'new': new
+        }
 
-    return HttpResponse(template.render(context, request))
+        return HttpResponse(template.render(context, request))
+    except: New.DoesNotExist:
+        raise Http404("New does not exist")
