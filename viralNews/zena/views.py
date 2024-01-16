@@ -7,14 +7,8 @@ from .models import New
 # Create your views here.
 
 def news(request):
-
     news = New.objects.all().values()
-    template = loader.get_template('index.html')
-    context = {
-        "news": news,
-    }
-    return HttpResponse(template.render(context, request))
-
+    return render(request, 'index.html', {'news': news})
 def newDetail(request,title):
     try:   
         the_title = title.replace("-"," ")
